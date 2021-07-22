@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/src/consts/theme_color.dart';
+import 'package:food_delivery/src/view/sign_in.dart';
+import 'package:food_delivery/src/view/signup_process.dart';
 
 class SignUp extends StatelessWidget {
   @override
@@ -111,29 +113,49 @@ class SignUp extends StatelessWidget {
                               SizedBox(
                                 height: 20,
                               ),
-                              Container(
-                                width:
-                                    MediaQuery.of(context).size.width / 2 - 50,
-                                height: 50,
-                                child: Center(
-                                  child: Text(
-                                    "Create Account",
-                                    style: TextStyle(
-                                        color: kTextColor,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
+                              InkWell(
+                                child: Container(
+                                  width: MediaQuery.of(context).size.width / 2 -
+                                      50,
+                                  height: 50,
+                                  child: Center(
+                                    child: Text(
+                                      "Create Account",
+                                      style: TextStyle(
+                                          color: kTextColor,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ),
+                                  decoration: BoxDecoration(
+                                      color: kGreenColor,
+                                      borderRadius: BorderRadius.circular(20)),
                                 ),
-                                decoration: BoxDecoration(
-                                    color: kGreenColor,
-                                    borderRadius: BorderRadius.circular(20)),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return SignUpProcess();
+                                      },
+                                    ),
+                                  );
+                                },
                               ),
                               SizedBox(height: 10),
-                              Text(
-                                "already have an account?",
-                                style: TextStyle(
-                                    color: kGreenColor,
-                                    fontWeight: FontWeight.bold),
+                              InkWell(
+                                child: Text(
+                                  "already have an account?",
+                                  style: TextStyle(
+                                      color: kGreenColor,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                onTap: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return SignIn();
+                                  }));
+                                },
                               )
                             ],
                           )),
