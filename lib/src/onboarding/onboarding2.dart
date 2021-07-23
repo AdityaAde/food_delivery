@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery/src/consts/theme_color.dart';
-import 'package:food_delivery/src/view/sign_up.dart';
+import 'package:food_delivery/src/login_screen/sign_up.dart';
 
 class OnBoardingDua extends StatelessWidget {
   @override

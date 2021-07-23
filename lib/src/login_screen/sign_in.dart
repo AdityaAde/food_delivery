@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/src/consts/theme_color.dart';
-import 'package:food_delivery/src/view/sign_in.dart';
-import 'package:food_delivery/src/view/signup_process.dart';
+import 'package:food_delivery/src/views/home_screen.dart';
 
-class SignUp extends StatelessWidget {
+class SignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +32,7 @@ class SignUp extends StatelessWidget {
               Container(
                 width: MediaQuery.of(context).size.width / 2,
                 height: MediaQuery.of(context).size.height / 7,
-                margin: EdgeInsets.only(left: 100, right: 100, top: 250),
+                margin: EdgeInsets.only(left: 100, right: 90, top: 250),
                 child: Column(
                   children: [
                     Text(
@@ -63,7 +62,7 @@ class SignUp extends StatelessWidget {
                     Column(
                       children: [
                         Text(
-                          "Sign Up For Free",
+                          "Login To Your Account",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
@@ -78,10 +77,6 @@ class SignUp extends StatelessWidget {
                               TextField(
                                 decoration: InputDecoration(
                                     hintText: "Aditya",
-                                    prefixIcon: Icon(
-                                      Icons.person,
-                                      color: kGreenColor,
-                                    ),
                                     border: OutlineInputBorder(
                                         borderRadius:
                                             BorderRadius.circular(20))),
@@ -90,37 +85,96 @@ class SignUp extends StatelessWidget {
                               TextField(
                                 decoration: InputDecoration(
                                     hintText: "Email",
-                                    prefixIcon: Icon(
-                                      Icons.mail,
-                                      color: kGreenColor,
-                                    ),
                                     border: OutlineInputBorder(
                                         borderRadius:
                                             BorderRadius.circular(20))),
                               ),
                               SizedBox(height: 10),
-                              TextField(
-                                decoration: InputDecoration(
-                                    hintText: "Password",
-                                    prefixIcon: Icon(
-                                      Icons.lock,
-                                      color: kGreenColor,
-                                    ),
-                                    border: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(20))),
-                              ),
                               SizedBox(
-                                height: 20,
+                                height: 5,
                               ),
+                              Text("Or Continue With",
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold)),
+                              SizedBox(height: 10),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Card(
+                                    shadowColor: Colors.black,
+                                    elevation: 10,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                      padding: EdgeInsets.only(left: 20),
+                                      width: 152,
+                                      height: 57,
+                                      child: Row(
+                                        children: [
+                                          CircleAvatar(
+                                            backgroundImage: AssetImage(
+                                                'assets/images/fb.png'),
+                                          ),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Text(
+                                            "Facebook",
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Card(
+                                    shadowColor: Colors.black,
+                                    elevation: 10,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                      padding: EdgeInsets.only(left: 20),
+                                      width: 152,
+                                      height: 57,
+                                      child: Row(
+                                        children: [
+                                          CircleAvatar(
+                                            backgroundColor: Colors.transparent,
+                                            backgroundImage: AssetImage(
+                                                'assets/images/google.png'),
+                                          ),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Text("Google",
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.bold))
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 10),
                               InkWell(
                                 child: Container(
-                                  width: MediaQuery.of(context).size.width / 2 -
-                                      50,
+                                  width: 141,
                                   height: 50,
                                   child: Center(
                                     child: Text(
-                                      "Create Account",
+                                      "Login",
                                       style: TextStyle(
                                           color: kTextColor,
                                           fontSize: 16,
@@ -132,31 +186,12 @@ class SignUp extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(20)),
                                 ),
                                 onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return SignUpProcess();
-                                      },
-                                    ),
-                                  );
-                                },
-                              ),
-                              SizedBox(height: 10),
-                              InkWell(
-                                child: Text(
-                                  "already have an account?",
-                                  style: TextStyle(
-                                      color: kGreenColor,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                onTap: () {
                                   Navigator.push(context,
                                       MaterialPageRoute(builder: (context) {
-                                    return SignIn();
+                                    return HomeScreen();
                                   }));
                                 },
-                              )
+                              ),
                             ],
                           )),
                         )
