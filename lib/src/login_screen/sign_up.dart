@@ -30,26 +30,30 @@ class SignUp extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                width: MediaQuery.of(context).size.width / 2,
-                height: MediaQuery.of(context).size.height / 6,
-                margin: EdgeInsets.only(left: 100, right: 90, top: 250),
-                child: Column(
-                  children: [
-                    Text(
-                      "Food Ninja",
-                      style: TextStyle(
-                          color: kGreenColor,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "Deliver Favorite Food",
-                      style:
-                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox()
-                  ],
+              Positioned(
+                top: MediaQuery.of(context).size.height * 0.4 - 50,
+                left: MediaQuery.of(context).size.width * 0.3 - 20,
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 2,
+                  height: MediaQuery.of(context).size.height / 6,
+                  /* margin: EdgeInsets.only(left: 100, right: 90, top: 250), */
+                  child: Column(
+                    children: [
+                      Text(
+                        "Food Ninja",
+                        style: TextStyle(
+                            color: kGreenColor,
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Deliver Favorite Food",
+                        style: TextStyle(
+                            fontSize: 13, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox()
+                    ],
+                  ),
                 ),
               ),
               Container(

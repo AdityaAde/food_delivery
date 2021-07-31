@@ -70,18 +70,22 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 20),
-                      Container(
-                        width: 325,
-                        height: 150,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10)),
-                        margin: EdgeInsets.only(
-                            bottom:
-                                MediaQuery.of(context).size.height / 2 - 100),
-                        child: Image.asset(
-                          'assets/images/promo.png',
-                          fit: BoxFit.cover,
-                        ),
+                      Column(
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width * 10,
+                            height: MediaQuery.of(context).size.height * 0.20,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10)),
+                            margin: EdgeInsets.only(
+                                bottom: MediaQuery.of(context).size.height / 2 -
+                                    100),
+                            child: Image.asset(
+                              'assets/images/promo.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
